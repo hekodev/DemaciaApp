@@ -1,27 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:demaciaapp/data.dart';
-import 'card_scroll_widget.dart';
-
-class CategorySection extends StatefulWidget {
-  @override
-  _CategorySectionState createState() => _CategorySectionState();
-}
-
-class _CategorySectionState extends State<CategorySection> {
-  var currentPage = CATEGORIES.length - 1.0;
-
+class FavoritesSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    PageController controller = PageController(
-      initialPage: CATEGORIES.length - 1,
-    );
-    controller.addListener(() {
-      setState(() {
-        currentPage = controller.page;
-      });
-    });
-
     return Column(
       children: <Widget>[
         Padding(
@@ -30,7 +11,7 @@ class _CategorySectionState extends State<CategorySection> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text(
-                'Categories',
+                'Favorites',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 46.05,
@@ -55,13 +36,13 @@ class _CategorySectionState extends State<CategorySection> {
             children: <Widget>[
               Container(
                 decoration: BoxDecoration(
-                  color: Color(0xFFff6e6e),
+                  color: Colors.blueAccent,
                   borderRadius: BorderRadius.circular(20.0),
                 ),
                 child: Center(
                   child: Padding(
                     padding: EdgeInsets.all(10),
-                    child: Text('Adventure'),
+                    child: Text('Latest'),
                   ),
                 ),
               ),
@@ -69,7 +50,7 @@ class _CategorySectionState extends State<CategorySection> {
                 width: 15.0,
               ),
               Text(
-                '25+ Stories',
+                '3+ Stories',
                 style: TextStyle(
                   color: Colors.blueAccent,
                 ),
@@ -77,21 +58,33 @@ class _CategorySectionState extends State<CategorySection> {
             ],
           ),
         ),
-        Stack(
-          children: <Widget>[
-            CardScrollWidget(currentPage),
-            Positioned.fill(
-              child: PageView.builder(
-                itemCount: CATEGORIES.length,
-                controller: controller,
-                reverse: true,
-                itemBuilder: (ctx, index) {
-                  return Container();
-                },
-              ),
-            )
-          ],
-        )
+        /////////////////////////////////////////////////////
+        SizedBox(
+          height: 20.0,
+        ),
+        Card(
+          semanticContainer: true,
+          clipBehavior: Clip.antiAliasWithSaveLayer,
+          child: Stack(
+            children: <Widget>[
+              Image.asset('assets/images/favoritepreview.png'),
+            ],
+          ),
+        ),
+        Card(
+          semanticContainer: true,
+          clipBehavior: Clip.antiAliasWithSaveLayer,
+          child: Stack(
+            children: <Widget>[
+              Image.asset('assets/images/favoritepreview2.png'),
+            ],
+          ),
+        ),
+        // Padding(
+        //   padding: EdgeInsets.all(8),
+        //   child: Image.asset('assets/images/favoritepreview.jpg',
+        //       height: 222.0, width: 296.0),
+        // )
       ],
     );
   }

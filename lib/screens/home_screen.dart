@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/category_section.dart';
+import '../widgets/favorites_section.dart';
 import '../widgets/main_drawer.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -31,6 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: <Widget>[
             CategorySection(),
+            FavoritesSection(),
           ],
         ),
       ),

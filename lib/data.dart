@@ -7,22 +7,22 @@ const CATEGORIES = const [
   Category(
     id: 'c1',
     title: 'Adventure',
-    imageURL: 'https://drive.google.com/file/d/1u1E-ReJg4mla7wm3sSBi_ckspJZkFm4g',
+    imageURL: 'assets/images/1.png',
   ),
   Category(
     id: 'c2',
     title: 'Mystery',
-    imageURL: 'https://drive.google.com/file/d/16PAvfGR1XnpQ8L2yxifL7sz0zXxmNzdq',
+    imageURL: 'assets/images/2.png',
   ),
   Category(
     id: 'c3',
     title: 'Action',
-    imageURL: 'https://drive.google.com/file/d/1-9T-1FUc5jw4-4FfCN0nc_etXQtCRIyT',
+    imageURL: 'assets/images/3.png',
   ),
   Category(
     id: 'c4',
     title: 'Suprise Foo!',
-    imageURL: 'https://drive.google.com/file/d/1ogLINVtcgdJLUPyQpw3K9c4OLBhM4FOk',
+    imageURL: 'assets/images/4.png',
   ),
 ];
 
